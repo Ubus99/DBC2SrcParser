@@ -79,7 +79,9 @@ def parse_to_enum_header():
     # start code
     print("starting parse enum to header..")
     filename = str(db_name) + "_enum"
-    header_file = open("../artifacts/" + filename + ".h", "w+")
+    my_path = os.path.abspath(os.path.dirname(__file__))
+    artifact_path = os.path.join(my_path, "artifacts/")
+    header_file = open(artifact_path + filename + ".h", "w+")
 
     # head
     header_file.write("/*\n")
@@ -132,7 +134,9 @@ def parse_to_mapping_header():
     # start code
     print("starting parse mappings to header..")
     filename = str(db_name) + "_mapping"
-    header_file = open("../artifacts/" + filename + ".hpp", "w+")
+    my_path = os.path.abspath(os.path.dirname(__file__))
+    artifact_path = os.path.join(my_path, "artifacts/")
+    header_file = open(artifact_path + filename + ".hpp", "w+")
 
     # head
     header_file.write("/*\n")
