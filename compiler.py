@@ -81,6 +81,7 @@ def parse_to_enum_header():
     filename = str(db_name) + "_enum"
     my_path = os.path.abspath(os.path.dirname(__file__))
     artifact_path = os.path.join(my_path, "artifacts/")
+    os.makedirs(artifact_path, exist_ok=True)
     header_file = open(artifact_path + filename + ".h", "w+")
 
     # head
@@ -136,6 +137,7 @@ def parse_to_mapping_header():
     filename = str(db_name) + "_mapping"
     my_path = os.path.abspath(os.path.dirname(__file__))
     artifact_path = os.path.join(my_path, "artifacts/")
+    os.makedirs(artifact_path, exist_ok=True)
     header_file = open(artifact_path + filename + ".hpp", "w+")
 
     # head
