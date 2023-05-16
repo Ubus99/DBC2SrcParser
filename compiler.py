@@ -1,7 +1,8 @@
-import cantools
-import sys
-import os
 import datetime
+import os
+import sys
+
+import cantools
 
 # define global
 db_name = None
@@ -109,7 +110,8 @@ def parse_to_enum_header():
     for s in db_dict:
         header_file.write("\t//" + s + "\n")
         for m in db_dict[s]:
-            header_file.write("\t" + str(m.name) + " = " + hex(m.frame_id) + ",\t///<" + str(m.name) + "\n")
+            header_file.write(
+                "\t" + str(m.name) + " = " + hex(m.frame_id) + ",\t///<" + str(m.name) + ": " + str(m.comment) + "\n")
         header_file.write("\n")
 
     header_file.write("};\n")
@@ -164,7 +166,8 @@ def parse_to_mapping_header():
     for s in db_dict:
         header_file.write("\t//" + s + "\n")
         for m in db_dict[s]:
-            header_file.write("\t{" + str(m.name) + ", " + str(m.length) + "},\t///<" + str(m.name) + "\n")
+            header_file.write(
+                "\t{" + str(m.name) + ", " + str(m.length) + "},\t///<" + str(m.name) + ": " + str(m.comment) + "\n")
         header_file.write("\n")
 
     header_file.write("};\n")
